@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fff;
+      }
+    </style>
+  </defs>
+  <g id="plus" transform="translate(-1540 -340)">
+    <rect id="Rectangle_34" data-name="Rectangle 34" width="20" height="20" transform="translate(1540 340)"/>
+    <path id="Union_3" data-name="Union 3" class="cls-1" d="M-3975,12V7h-5V5h5V0h2V5h5V7h-5v5Z" transform="translate(5524 344)"/>
+  </g>
+</svg>

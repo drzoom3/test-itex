@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fff;
+      }
+    </style>
+  </defs>
+  <g id="minus" transform="translate(-1540 -340)">
+    <rect id="Rectangle_37" data-name="Rectangle 37" width="20" height="20" transform="translate(1540 340)"/>
+    <rect id="Rectangle_38" data-name="Rectangle 38" class="cls-1" width="2" height="12" transform="translate(1556 349) rotate(90)"/>
+  </g>
+</svg>

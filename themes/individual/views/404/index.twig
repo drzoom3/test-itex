@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <title>{{ this.getPageHeadTitle() }}</title>
+    {% include "_template/meta.twig" %}
+</head>
+<body>
+<main class="page error-page">
+    <div class="container">
+        <h1 class="error-page__title">{{ this.pageH1 }}</h1>
+        <div class="error-page__content">
+            {{ content|raw }}
+        </div>
+    </div>
+</main>
+{% include "_template/scripts.twig" %}
+</body>
+</html>

@@ -1,0 +1,14 @@
+{% set breadcrumbs = cms.breadcrumbs() %}
+
+{% if breadcrumbs %}
+    <nav class="breadcrumbs">
+        {% for item in breadcrumbs %}
+            {% if not loop.last %}
+                <a href="{{ item.link }}">{{ item.label }}</a>
+                <span class="sep">/</span>
+            {% else %}
+                <span>{{ item.label }}</span>
+            {% endif %}
+        {% endfor %}
+    </nav>
+{% endif %}

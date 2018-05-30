@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="ru">
+    <head>
+        {% if not isGulp %}
+            <base href="{{ App.getBaseUrl(true) ~ '/' }}">
+            <link rel="icon" href="{{ App.getBaseUrl(true) }}/favicon.ico" type="image/x-icon">
+        {% endif %}
+        <title>{{ this.getPageHeadTitle() }}</title>
+        {% include "_template/meta.twig" %}
+        {{ cms.settings('module#seo', 'seo_gtm_head')|raw }}
+    </head>
+    <body>
+        {{ cms.settings('module#seo', 'seo_gtm_body')|raw }}
+        {% include "_template/modules/header.twig" %}
+        {% block layouts %}
+
+        {% endblock %}
+        {% include "_template/modules/footer.twig" %}
+        {# {% include "_template/modules/modal.twig" %} #}
+        {% include "_template/scripts.twig" %}
+    </body>
+</html>

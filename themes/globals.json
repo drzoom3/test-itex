@@ -1,0 +1,79 @@
+{
+    "vars": {
+        "siteName": "Отдел медицинской техники",
+        "base": "./individual/views",
+        "baseUrl": "/"
+    },
+    "blocks": {
+        "logo_image": "public/images/temp/logo.png",
+        "header_address": "г. Екатеринбург, ул. Ясная, 35",
+        "header_phone": "(343) 231-80-21",
+        "header_time_header": "Время работы",
+        "header_time_value": "9:00—17:30",
+        "copyright": "© МО «Отдел Медицинской Техники», 1995–2017",
+        "counters": "counters",
+        "home_about_link": "#",
+        "home_image": "public/images/temp/seotext.png"
+    },
+    "settings": {
+        "system": {
+            "title": "Отдел медицинской техники"
+        },
+        "module#slider": {
+            "slider_time": 1,
+            "slider_pause": 4
+        },
+        "module#seo": {
+            "seo_gtm_head": "",
+            "seo_gtm_body": ""
+        }
+    },
+    "breadcrumbs": [
+        {
+            "label": "Главная",
+            "link": "#"
+        },
+        {
+            "label": "Раздел",
+            "link": "#"
+        },
+        {
+            "label": "Подраздел"
+        }
+    ],
+    "data": {
+        "menu": [
+            {
+                "label": "О компании",
+                "url": "#",
+                "active": true
+            },
+            {
+                "label": "Продкуция",
+                "url": "#",
+                "items": [
+                    {
+                        "label": "Группа 1",
+                        "url": "#"
+                    },
+                    {
+                        "label": "Группа 2",
+                        "url": "#"
+                    }
+                ]
+            },
+            {
+                "label": "Услуги",
+                "url": "#"
+            },
+            {
+                "label": "Новости",
+                "url": "#"
+            },
+            {
+                "label": "Контакты",
+                "url": "#"
+            }
+        ]
+    }
+}

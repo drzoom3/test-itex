@@ -139,6 +139,13 @@ gulp.task('fonts', function() {
         .pipe(reload({stream: true}));
 });
 
+// ICONS TASK
+gulp.task('icons', function() {
+    gulp.src('./individual/public/icons/**/*.*')
+        .pipe(gulp.dest('./build/public/icons'))
+        .pipe(reload({stream: true}));
+});
+
 // LIBS TASK
 gulp.task('libs', function () {
     gulp.src('./individual/public/libs/**/*')
@@ -155,6 +162,7 @@ gulp.task('build', [
     'fonts',
     'images',
     'sprite',
+    'icons',
     'libs'
 ]);
 
@@ -175,12 +183,18 @@ gulp.task('watch', function() {
     watch('./individual/views/**/*.json',  { usePolling: true }, function() {
         gulp.start('json');
     });
-    watch('./individual/public/images/**/*.*',  { usePolling: true }, function() {
+    watch('./individual/public/images/**/*.svg',  { usePolling: true }, function() {
+        gulp.start('images');
+    });
+    watch(['./individual/public/images/**/*.*','!./individual/public/images/**/*.svg'],  { usePolling: true }, function() {
         gulp.start('images');
         gulp.start('sprite');
     });
     watch('./individual/public/fonts/**/*.*',  { usePolling: true }, function() {
         gulp.start('fonts');
+    });
+    watch('./individual/public/icons/**/*.*',  { usePolling: true }, function() {
+        gulp.start('icons');
     });
     watch('./individual/public/libs/**/*.*',  { usePolling: true }, function() {
         gulp.start('libs');

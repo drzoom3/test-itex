@@ -1,5 +1,6 @@
 /themes/node_modules
 .idea
+.vscode
 /themes/build
 /themes/individual/public/css/main.css
 

@@ -3,3 +3,22 @@
 @import "../libs/bootstrap/css/bootstrap.min";
 @import "../libs/fancybox/jquery.fancybox";
 
+@import "header.scss";
+@import "nav.scss";
+@import "footer.scss";
+
+html {
+    height: 100%;
+}
+body {
+    background-color: #F6F6F6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+    justify-content: flex-start;
+
+    .page {
+        flex: 2;
+        min-height: 150px;
+    }
+}

@@ -1,4 +1,73 @@
 .footer {
-    border-top: 1px solid #444444;
-    padding: 25px 0 40px;
+    &-inner {
+        border-top: 1px solid #444444;
+        padding: 25px 0 40px;
+
+        > .row {
+            display: flex;
+        }
+    }
+
+    &-list {
+        font-size: 0.75rem;
+
+        li {
+            margin: 0 0 15px 0;
+        }
+    }
+
+    &-langs {
+        font-size: 0.8125rem;
+        float: right;
+
+        .active {
+            font-weight: 700;
+        }
+
+        a {
+            margin: 0 10px;
+
+            &:last-child {
+                margin-right: 0;
+            }
+        }
+    }
+
+    &-social {
+        float: right;
+        clear: both;
+        position: absolute;
+        right: 15px;
+        bottom: 30px;
+
+        a+a {
+            margin-left: 20px;
+        }
+    }
+
+    &-subscribe {
+        h3 {
+            font-size: 0.875rem;
+            font-weight: 700;
+            margin: 0 0 20px 0;
+        }
+        .form-control {
+            background: none;
+            border: none;
+            box-shadow: none;
+            border-bottom: 1px solid #444444;
+            padding-left: 0;
+            border-radius: 0;
+            font-size: 0.875rem;
+        }
+
+        .btn {
+            margin: 25px 0 0;
+            width: 100%;
+            max-width: 240px;
+            height: 50px;
+            line-height: 38px;
+            font-size: 0.875rem;
+        }
+    }
 }

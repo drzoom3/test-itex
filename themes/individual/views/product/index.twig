@@ -1,0 +1,130 @@
+{% extends "layouts/home.twig" %}
+
+{% block content %}
+<div class="page page--product">
+	<div class="container">
+		<div class="page-inner">
+			<div class="row">
+				<div class="col-sm-6">Gallery</div>
+				<div class="col-sm-6 product">
+					<h2>ВОДОЛАЗКА В РУБЧИК</h2>
+					<div class="product-id">Арт. 2611581</div>
+					<div class="product-price">8900 &#8381;</div>
+
+					<div class="product-info">
+						<a data-toggle="collapse" href="#product-descr" role="button" aria-expanded="true" aria-controls="product-descr" class="product-info-header">
+							<img src="../../public/icons/plus.svg" height="20" width="20" class="icon icon--plus" alt="plus" />
+							<img src="../../public/icons/minus.svg" height="20" width="20" class="icon icon--minus" alt="minus" />
+							<h4>ОПИСАНИЕ</h4>
+						</a>
+						<div class="product-info-body collapse in" id="product-descr">
+							dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.
+						</div>
+					</div>
+					<div class="product-info">
+						<a data-toggle="collapse" href="#product-details" role="button" aria-expanded="false" aria-controls="product-details" class="product-info-header collapsed">
+							<img src="../../public/icons/plus.svg" height="20" width="20" class="icon icon--plus" alt="plus" />
+							<img src="../../public/icons/minus.svg" height="20" width="20" class="icon icon--minus" alt="minus" />
+							<h4>ДЕТАЛИ И УХОД</h4>
+						</a>
+						<div class="product-info-body collapse" id="product-details">
+							dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.
+						</div>
+					</div>
+					<div class="product-info">
+						<a data-toggle="collapse" href="#product-delivery" role="button" aria-expanded="false" aria-controls="product-delivery" class="product-info-header collapsed">
+							<img src="../../public/icons/plus.svg" height="20" width="20" class="icon icon--plus" alt="plus" />
+							<img src="../../public/icons/minus.svg" height="20" width="20" class="icon icon--minus" alt="minus" />
+							<h4>ДОСТАВКА И ВОЗВРАТ</h4>
+						</a>
+						<div class="product-info-body collapse" id="product-delivery">
+							dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.
+						</div>
+					</div>
+					<div class="product-info">
+						<a data-toggle="collapse" href="#product-size" role="button" aria-expanded="false" aria-controls="product-size" class="product-info-header collapsed">
+							<img src="../../public/icons/plus.svg" height="20" width="20" class="icon icon--plus" alt="plus" />
+							<img src="../../public/icons/minus.svg" height="20" width="20" class="icon icon--minus" alt="minus" />
+							<h4>РАЗМЕР НА МОДЕЛИ</h4>
+						</a>
+						<div class="product-info-body collapse" id="product-size">
+							dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.
+						</div>
+					</div>
+
+					<div class="product-form">
+						<div class="product-form-caption">
+							ВЫБЕРИТЕ РАЗМЕР | <a href="/">СПРАВОЧНИК ПО РАЗМЕРАМ</a>
+						</div>
+						<div>
+							<select class="product-form-size">
+								<option>S</option>
+								<option>M</option>
+								<option>L</option>
+							</select>
+							<div class="product-form-count">
+								<span class="num">1</span>
+								<img src="../../public/icons/bt_plus.svg" height="18" width="18" class="icon icon--plus" alt="plus" />
+								<img src="../../public/icons/bt_minus.svg" height="18" width="18" class="icon icon--minus" alt="minus" />
+							</div>
+							<button class="btn" type="button">ОФОРМИТЬ ЗАКАЗ</button>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="order-form">
+				<div class="row">
+					<div class="col-sm-3">
+						<div class="order-form-header">
+							<img src="../../public/icons/next.svg" height="30" width="30" class="icon icon--next" alt="" />
+							<h4>СПОСОБ ДОСТАВКИ</h4>
+						</div>
+						<div>
+							<input type="radio"> Доставка
+							<input type="radio"> Самовывоз
+							<div>! Вариант "Самовывоз" доступен только в городе "Москва"</div>
+						</div>
+					</div>
+					<div class="col-sm-3">
+						<div class="order-form-header">
+							<img src="../../public/icons/next.svg" height="30" width="30" class="icon icon--next" alt="" />
+							<h4>АДРЕС</h4>
+						</div>
+						<div>
+							<input type="radio"> Россия, г. Москва, ул. Кремлевская, д. 3, кв. 15   X
+						</div>
+						<button>ДОБАВИТЬ АДРЕС</button>
+					</div>
+					<div class="col-sm-3">
+						<div class="order-form-header">
+							<img src="../../public/icons/next.svg" height="30" width="30" class="icon icon--next" alt="" />
+							<h4>СПОСОБ ОПЛАТЫ</h4>
+						</div>
+						<div>
+							<input type="radio"> Онлайн-оплата
+							<input type="radio"> Наличные
+							<div>! Вариант "Наличными" доступен при покупке до 6 вещей</div>
+						</div>
+					</div>
+					<div class="col-sm-3">
+						<div class="order-form-header">
+							<img src="../../public/icons/next.svg" height="30" width="30" class="icon icon--next" alt="" />
+							<h4>ПОКУПАТЕЛЬ</h4>
+						</div>
+						<div>
+							<label>Имя, Фамилия *</label>
+							<input type="text" />
+							<label>Телефон *</label>
+							<input type="text" />
+							<label>E-mail *</label>
+							<input type="text" />
+							<label>Комментарии к заказу</label>
+							<textarea></textarea>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+{% endblock %}

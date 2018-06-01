@@ -163,6 +163,8 @@ $(function() {
             ) {
                 document.querySelector('#modal-order-done').classList.remove('hide')
                 document.querySelector('body').classList.add('modal-open')
+                console.log(order)
+                //clear order form
             } else {
                 alert('Не все заполнено')
             }

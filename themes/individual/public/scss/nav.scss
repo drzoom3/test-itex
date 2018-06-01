@@ -2,6 +2,7 @@
     display: inline-block;
     position: relative;
     vertical-align: middle;
+    font-family: Tahoma, Geneva, Verdana, sans-serif;
 
     &-btn {
         .icon-burg {
@@ -35,7 +36,7 @@
 
     .subnav {
         &-list {
-
+            margin: 0;
         }
         &-item {
             font-size: .875rem;

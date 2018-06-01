@@ -1,3 +1,5 @@
+{% set menu = cms.data('menu') %}
+
 <nav class="nav">
     <a data-toggle="collapse" href="#nav" role="button" aria-expanded="false" aria-controls="nav" class="nav-btn collapsed">
         <img src="../../public/icons/burg.svg" width="30" height="23" alt="" class="icon-burg" />
@@ -5,29 +7,17 @@
     </a>
     
     <div class="nav-list collapse" id="nav">
-        <div class="nav-item">
-            <a class="nav-link" href="/">КОЛЛЕКЦИЯ</a>
-            <div class="subnav">
-                <div class="subnav-item"><a href="/">ЮБКИ И ПЛАТЬЯ</a></div>
-                <div class="subnav-item"><a href="/">ТОПЫ</a></div>
-                <div class="subnav-item"><a href="/">ЖАКЕТЫ И ПАЛЬТО</a></div>
-                <div class="subnav-item"><a href="/">ХЛОПКОВЫЕ СВИТЕРА</a></div>
-                <div class="subnav-item active"><a href="/">ВОДОЛАЗКИ</a></div>
-                <div class="subnav-item"><a href="/">КАРДИГАНЫ</a></div>
-                <div class="subnav-item"><a href="/">ШЕРСТЯНЫЕ СВИТЕРА</a></div>
+        {% for item in menu %}
+            <div class="nav-item">
+                <a class="nav-link" href="{{ item.url }}">{{ item.label }}</a>
+                {% if item.items %}
+                    <div class="subnav">
+                        {% for subitem in item.items %}                            
+                            <div class="subnav-item{% if subitem.active %} active{% endif %}"><a href="{{ subitem.url }}">{{ subitem.label }}</a></div>
+                        {% endfor %}
+                    </div>
+                {% endif %}
             </div>
-        </div>
-        <div class="nav-item">
-            <a class="nav-link" href="/">СКИДКИ</a>
-        </div>
-        <div class="nav-item">
-            <a class="nav-link" href="/">АКЦИИ</a>
-        </div>
-        <div class="nav-item">
-            <a class="nav-link" href="/">НОВОСТИ</a>
-        </div>
-        <div class="nav-item">
-            <a class="nav-link" href="/">О НАС</a>
-        </div>
+        {% endfor %}
     </div>
 </nav>

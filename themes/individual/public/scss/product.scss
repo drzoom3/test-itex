@@ -1,29 +1,41 @@
 .page--product {
     .product {
-        h2 {
-            font-size: 1rem;
-            margin: 0 0 10px;
-            color: #444444;
-            font-weight: 500;
+        display: flex;
+
+        &-info {
+            margin-left: 30px;
+            width: 100%;
+
+            h2 {
+                font-size: 1rem;
+                margin: 0 0 10px;
+                color: #444444;
+                font-weight: 500;
+                font-family: Tahoma, Geneva, Verdana, sans-serif;
+            }
         }
+        
         &-id {
             color: #444444;
             font-size: 0.75rem;
             margin: 0 0 10px;
+            font-family: Tahoma, Geneva, Verdana, sans-serif;
         }
         &-price {
             font-size: 1rem;
             color: #444444;
             margin: 0 0 20px;
+            font-family: Tahoma, Geneva, Verdana, sans-serif;
         }
 
-        &-info {
+        &-text {
             border-top: 1px solid #95989A;
 
             &-header {
                 cursor: pointer;
                 display: block;
                 padding: 20px 0;
+                font-family: Tahoma, Geneva, Verdana, sans-serif;
 
                 &::after {
                     clear: both;
@@ -60,7 +72,6 @@
                 margin: 0 0 20px;
             }
         }
-
         
         &-form {
             border-top: 1px solid #95989A;
@@ -69,6 +80,7 @@
             &-caption {
                 font-size: 0.625rem;
                 margin: 0 0 25px;
+                font-family: Tahoma, Geneva, Verdana, sans-serif;
             }
             &-size {
                 height: 40px;
@@ -83,9 +95,12 @@
                 line-height: 40px;
                 font-size: 0.875rem;
                 vertical-align: middle;
+                font-family: Tahoma, Geneva, Verdana, sans-serif;
 
                 .num {
                     margin: 0 30px 0 0;
+                    width: 16px;
+                    display: inline-block;
                 }
                 .icon {
                     position: absolute;
@@ -99,9 +114,67 @@
                     top: 22px;
                 }
             }
-            .btn {
-                height: 40px;
-                line-height: 28px;
+        }
+
+        &-gallery {
+            display: flex;
+            flex: 0 0 auto;
+    
+            &-main {
+                width: 390px;
+                height: 540;
+            }
+            &-nav {
+                margin-left: 30px;
+                width: 122px;
+    
+                .slick-slide {
+                    outline: none;
+                    margin-bottom: 15px;
+                    cursor: pointer;
+                    
+                    &.slick-current {
+                        border-color: #C1C1C1; 
+                    }
+                }
+    
+                .slick-arrow {                
+                    height: 30px;
+                    font-size: 0;
+                    background: none;
+                    border: none;
+                    display: block;
+                    cursor: pointer;
+                    width: 100%;
+                    outline: none;
+                    position: relative;
+    
+                    &::before {
+                        content: '';
+                        display: block;
+                        position: absolute;
+                        left: 0;
+                        top: 50%;
+                        left: 50%;
+                        margin-top: -4px;
+                        margin-left: -4px;
+                        width: 0; 
+                        height: 0; 
+                        border-left: 4px solid transparent;
+                        border-right: 4px solid transparent;
+                    }
+                }
+                .slick-prev {
+                    &::before {                    
+                        border-bottom: 4px solid #000000;
+                    }
+                }
+                .slick-next {
+                    margin-top: -15px;
+                    &::before {
+                        border-top: 4px solid #000000;
+                    }
+                }
             }
         }
     }
@@ -110,18 +183,106 @@
         border-top: 1px solid #444444;
         padding: 25px 0 0;
         margin: 40px 0 0;
+        font-family: Tahoma, Geneva, Verdana, sans-serif;
 
         &-header {
             margin: 0 0 25px;
-            
+
             h4 {
                 font-size: 1rem;
                 font-weight: 700;
                 padding: 7px 0;
                 margin: 0;
+                color: #888888;
             }
             .icon {
                 float: right;
+                display: none;
+            }
+        }
+
+        &-body {
+            font-size: 0.75rem;
+            color: #444444;
+
+            &--edit {
+                display: none;
+            }
+            &--done {
+                display: block;
+            }
+        }
+        
+        &-change {
+            margin: 25px 0 0;
+            display: inline-block;
+            text-decoration: underline;
+        }
+
+        .comment {
+            margin: 5px 0 0;
+        }
+
+        .radio .comment {
+            margin-left: 40px;
+        }
+
+        .form-row {
+            margin-bottom: 20px;
+
+            label {
+                font-size: 0.75rem;
+                margin-bottom: 10px;
+                font-weight: 400;
+            }
+
+            input,
+            textarea {
+                border: 1px solid #000000;
+                font-size: 0.875rem;
+                display: block;
+                width: 100%;
+                padding: 5px 15px;
+                color: #000000;
+            }
+            textarea {
+                height: 100px;
+            }
+        }
+
+        .btn {
+            margin: 25px 0 0;
+            width: 100%;
+            max-width: 210px;
+            height: 50px;
+            line-height: 38px;
+            font-size: 0.875rem;
+        }
+
+        .radio--address {
+            padding-right: 20px;
+
+            .icon {
+                cursor: pointer;
+                position: absolute;
+                right: 0;
+                top: 8px;
+            }
+        }
+
+        .active {
+            .icon--next {
+                display: block;
+            }
+            h4 {
+                color: #000000;
+            }
+            
+            .order-form-body--edit {
+                display: block;
+            }
+            .order-form-body--done {
+                display: none;
             }
         }
     }

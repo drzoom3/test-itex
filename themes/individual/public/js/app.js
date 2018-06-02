@@ -13,15 +13,15 @@ $(function() {
         }
     }
 
-    $.itexUp({
+    /* $.itexUp({
         elementID: 'up', //ID элемента
         showButtonHeight: 300, //Высота прокрутки в пикселя, когда появляется кнопка
         speed: 1000 //Скорость прокрутки в милисекундах
-    });
+    }); */
 
     $('table').wrap('<div class="table-responsive">');
     
-	$('.hrefpop').fancybox();
+	//$('.hrefpop').fancybox();
 	
     $('.navN .firstpage').attr('title', 'На первую');
     $('.navN .lastpage').attr('title', 'На последнюю');
@@ -37,15 +37,22 @@ $(function() {
         const order = {
             size: 'S',
             count: 1,
-            delivery: null,
-            address: null,
-            payment: null,
+            delivery: '',
+            address: '',
+            payment: '',
             name: '',
             phone: '',
             email: '',
             comment: ''
         }
-        let step = 1;
+        const DELIVERY_TYPES = {
+            delivery: 'Доставка',
+            self: 'Самовывоз'
+        }
+        const PAYMENT_TYPES = {
+            online: 'Онлайн-оплата',
+            cash: 'Наличные'
+        }
 
         //product gallery
         $('.product-gallery-main').slick({
@@ -85,36 +92,42 @@ $(function() {
             $('.order-form').removeClass('hide')
         })
 
-        updateOrderStep = () => {
-            if (order.size && order.count) {
-                step = 1;
+        validateStep = step => {
+            let valid = false;
+
+            if (step == 1 && order.delivery) {
+                valid = true
             }
 
-            if (order.delivery) {
-                step = 2;
+            if (step == 2 && order.address) {
+                valid = true
             }
 
-            if (order.address) {
-                step = 3;
+            if (step == 3 && order.payment) {
+                valid = true
             }
 
-            if (order.payment) {
-                step = 4;
+            if (step == 4 && order.name && order.phone && order.email) {
+                valid = true
             }
 
-            for (let i = 1; i <= 4; i++) {
-                if (i <= step) {
-                    $(`.order-step--${i}`).removeClass('hide')
-                } else {
-                    $(`.order-step--${i}`).addClass('hide')
-                }
+            return valid;
+        }
 
-                if (i == step) {
-                    $(`.order-step--${i}`).addClass('active')
-                } else {                    
-                    $(`.order-step--${i}`).removeClass('active')
-                }
-            }
+        updateViewFormValues = () => {
+            const $delivery = document.querySelector('#form-delivery-value')
+            const $address = document.querySelector('#form-address-value')
+            const $payment = document.querySelector('#form-payment-value')
+            const $user = document.querySelector('#form-user-value')
+
+            $delivery.innerHTML = DELIVERY_TYPES[order.delivery]
+            $address.innerHTML = order.address
+            $payment.innerHTML = PAYMENT_TYPES[order.payment]
+            $user.innerHTML = `
+                <p>Имя, Фамилия: <b>${ order.name }</b></p>
+                <p>Телефон: <b>${ order.phone }</b></p>
+                ${ order.comment && `<p>Комментарии к заказу:<br>${ order.comment }</p>` }
+            `
         }
 
         $('.order-form input[type=radio]').change( e => {
@@ -130,8 +143,6 @@ $(function() {
             if (comment) {
                 $(target).closest('.radio').append(`<div class="comment">${comment}</div>`)
             }
-
-            updateOrderStep()
         })
 
         $('.order-form input[type=text], .order-form input[type=email], .order-form textarea').change( e => {
@@ -147,7 +158,9 @@ $(function() {
 
             const step = parseInt(e.target.dataset.step);
             
+            document.querySelectorAll('.order-step').forEach( el => el.classList.remove('active'))
             document.querySelector(`.order-step--${step}`).classList.add('active')
+
         })
 
         $('#btn-order-done').click( e => {
@@ -173,6 +186,26 @@ $(function() {
         $('#btn-order-done-close').click( e => {
             document.querySelector('#modal-order-done').classList.add('hide')
             document.querySelector('body').classList.remove('modal-open')
+        })
+
+        $('.order-form .icon--next').click( e => {
+            e.preventDefault()
+            
+            const step = parseInt(e.target.dataset.step);
+
+            if (validateStep(step)) {
+            
+                document.querySelectorAll('.order-step').forEach( el => el.classList.remove('active'))
+
+                if (step < 4) {
+                    document.querySelector(`.order-step--${step + 1}`).classList.remove('hidden')
+                    document.querySelector(`.order-step--${step + 1}`).classList.add('active')
+                }
+
+                updateViewFormValues()
+            } else {
+                alert('Не выбраны параметры')
+            }
         })
     })()
     

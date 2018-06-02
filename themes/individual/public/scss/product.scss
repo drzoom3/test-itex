@@ -122,7 +122,8 @@
     
             &-main {
                 width: 390px;
-                height: 540;
+                height: 540px;
+                overflow: hidden;
             }
             &-nav {
                 margin-left: 30px;
@@ -184,6 +185,16 @@
         padding: 25px 0 0;
         margin: 40px 0 0;
         font-family: Tahoma, Geneva, Verdana, sans-serif;
+        display: flex;
+        justify-content: space-between;
+
+        .order-step {
+            flex: 1 1 100px;
+
+            +.order-step {
+                margin-left: 20px;
+            }
+        }
 
         &-header {
             margin: 0 0 25px;
@@ -198,6 +209,7 @@
             .icon {
                 float: right;
                 display: none;
+                cursor: pointer;
             }
         }
 
@@ -214,7 +226,7 @@
         }
         
         &-change {
-            margin: 25px 0 0;
+            margin: 10px 0 0;
             display: inline-block;
             text-decoration: underline;
         }
@@ -257,6 +269,12 @@
             height: 50px;
             line-height: 38px;
             font-size: 0.875rem;
+        }
+
+        .order-step--4 {
+            .btn {
+                margin-top: 40px;
+            }
         }
 
         .radio--address {

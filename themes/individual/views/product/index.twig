@@ -76,101 +76,97 @@
 				</div>
 			</div>
 			<div class="order-form hide">
-				<div class="row">
-					<div class="col-sm-3 order-step order-step--1 active">
-						<div class="order-form-header">
-							<img src="../../public/icons/next.svg" height="30" width="30" class="icon icon--next" alt="" />
-							<h4>СПОСОБ ДОСТАВКИ</h4>
+				<div class="order-step order-step--1 active">
+					<div class="order-form-header">
+						<img src="../../public/icons/next.svg" height="30" width="30" class="icon icon--next" alt="" data-step="1" />
+						<h4>СПОСОБ ДОСТАВКИ</h4>
+					</div>
+					<div class="order-form-body order-form-body--edit">
+						<div class="radio">
+							<input type="radio" id="form-delivery-delivery" name="delivery" value="delivery"><label for="form-delivery-delivery">Доставка</label>
 						</div>
-						<div class="order-form-body order-form-body--edit">
-							<div class="radio">
-								<input type="radio" id="form-delivery-delivery" name="delivery" value="delivery"><label for="form-delivery-delivery">Доставка</label>
-							</div>
-							<div class="radio">
-								<input type="radio" id="form-delivery-self" name="delivery" value="self" data-comment='! Вариант "Самовывоз" доступен только в городе "Москва"'><label for="form-delivery-self">Самовывоз</label>
-							</div>
-						</div>
-						<div class="order-form-body order-form-body--done">
-							<p>Доставка</p>
-							<a href="#" class="order-form-change" data-step="1">Изменить</a>
+						<div class="radio">
+							<input type="radio" id="form-delivery-self" name="delivery" value="self" data-comment='! Вариант "Самовывоз" доступен только в городе "Москва"'><label for="form-delivery-self">Самовывоз</label>
 						</div>
 					</div>
-					<div class="col-sm-3 order-step order-step--2 hide">
-						<div class="order-form-header">
-							<img src="../../public/icons/next.svg" height="30" width="30" class="icon icon--next" alt="" />
-							<h4>АДРЕС</h4>
-						</div>
-						<div class="order-form-body order-form-body--edit">
-							<div class="radio radio--address">
-								<input type="radio" id="form-address-1" name="address" value="Россия, г. Москва, ул. Кремлевская, д. 3, кв. 15"><label for="form-address-1">Россия, г. Москва, ул. Кремлевская, д. 3, кв. 15</label>
-
-								<img src="../../public/icons/delete.svg" height="10" width="10" class="icon icon--delete" alt="" />
-							</div>
-							<button class="btn">ДОБАВИТЬ АДРЕС</button>
-						</div>
-						<div class="order-form-body order-form-body--done">
-							<p>Россия, г. Москва, ул. Кремлевская, д. 3, кв. 15</p>
-							<a href="#" class="order-form-change" data-step="2">Изменить</a>
-						</div>
-					</div>
-					<div class="col-sm-3 order-step order-step--3 hide">
-						<div class="order-form-header">
-							<img src="../../public/icons/next.svg" height="30" width="30" class="icon icon--next" alt="" />
-							<h4>СПОСОБ ОПЛАТЫ</h4>
-						</div>
-						<div class="order-form-body--edit">
-							<div class="radio">
-								<input type="radio" id="form-payment-online" name="payment" value="online"><label for="form-payment-online">Онлайн-оплата</label>
-							</div>
-							<div class="radio">
-								<input type="radio" id="form-payment-cash" name="payment" value="cash" data-comment='! Вариант "Наличными" доступен при покупке до 6 вещей'><label for="form-payment-cash">Наличные</label>
-							</div>
-						</div>
-						<div class="order-form-body order-form-body--done">
-							<p>Наличные</p>
-							<a href="#" class="order-form-change" data-step="3">Изменить</a>
-						</div>
-					</div>
-					<div class="col-sm-3 order-step order-step--4 hide">
-						<div class="order-form-header">
-							<img src="../../public/icons/next.svg" height="30" width="30" class="icon icon--next" alt="" />
-							<h4>ПОКУПАТЕЛЬ</h4>
-						</div>
-						<div class="order-form-body order-form-body--edit">
-							<div class="form-row">
-								<label>Имя, Фамилия *</label>
-								<input type="text" name="name" />
-							</div>
-							<div class="form-row">
-								<label>Телефон *</label>
-								<input type="text" name="phone" />
-							</div>
-							<div class="form-row">
-								<label>E-mail *</label>
-								<input type="email" name="email" />
-							</div>
-							<div class="form-row">
-								<label>Комментарии к заказу</label>
-								<textarea name="comment"></textarea>
-							</div>
-						</div>
-						<div class="order-form-body order-form-body--done">
-							<p>Имя, Фамилия: Иванов Иван</p>
-							<p>Телефон: 8-999-999-17-54</p>
-							<p>Комментарии к заказу:<br>Позвонить перед доставкой за 2 часа</p>
-							<a href="#" class="order-form-change" data-step="4">Изменить</a>
-						</div>
+					<div class="order-form-body order-form-body--done">
+						<p id="form-delivery-value">Доставка</p>
+						<a href="#" class="order-form-change" data-step="1">Изменить</a>
 					</div>
 				</div>
-				<button class="btn pull-right order-step--4 hide" id="btn-order-done">ОФОРМИТЬ ЗАКАЗ</button>
+				<div class="order-step order-step--2 hidden">
+					<div class="order-form-header">
+						<img src="../../public/icons/next.svg" height="30" width="30" class="icon icon--next" alt="" data-step="2" />
+						<h4>АДРЕС</h4>
+					</div>
+					<div class="order-form-body order-form-body--edit">
+						<div class="radio radio--address">
+							<input type="radio" id="form-address-1" name="address" value="Россия, г. Москва, ул. Кремлевская, д. 3, кв. 15"><label for="form-address-1">Россия, г. Москва, ул. Кремлевская, д. 3, кв. 15</label>
 
-				<div class="modal-order-done hide" id="modal-order-done">
-					<div><a href="/" class="logo"><img src="../../public/images/logo.svg" width="145" alt="LOGOTYPE" /></a></div>
-					<div><img src="../../public/icons/close_bur.svg" height="30" width="30" class="icon icon--close" alt="" /></div>
-					<h4>ВАШ ЗАКАЗ ОФОРМЛЕН</h4>
-					<p>dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.</p>
-					<button type="button" class="btn" id="btn-order-done-close">ВЕРНУТЬСЯ К ПОКУПКАМ</button>
+							<img src="../../public/icons/delete.svg" height="10" width="10" class="icon icon--delete" alt="" />
+						</div>
+						<button class="btn">ДОБАВИТЬ АДРЕС</button>
+					</div>
+					<div class="order-form-body order-form-body--done">
+						<p id="form-address-value"></p>
+						<a href="#" class="order-form-change" data-step="2">Изменить</a>
+					</div>
 				</div>
+				<div class="order-step order-step--3 hidden">
+					<div class="order-form-header">
+						<img src="../../public/icons/next.svg" height="30" width="30" class="icon icon--next" alt="" data-step="3" />
+						<h4>СПОСОБ ОПЛАТЫ</h4>
+					</div>
+					<div class="order-form-body--edit">
+						<div class="radio">
+							<input type="radio" id="form-payment-online" name="payment" value="online"><label for="form-payment-online">Онлайн-оплата</label>
+						</div>
+						<div class="radio">
+							<input type="radio" id="form-payment-cash" name="payment" value="cash" data-comment='! Вариант "Наличными" доступен при покупке до 6 вещей'><label for="form-payment-cash">Наличные</label>
+						</div>
+					</div>
+					<div class="order-form-body order-form-body--done">
+						<p id="form-payment-value"></p>
+						<a href="#" class="order-form-change" data-step="3">Изменить</a>
+					</div>
+				</div>
+				<div class="order-step order-step--4 hidden">
+					<div class="order-form-header">
+						<img src="../../public/icons/next.svg" height="30" width="30" class="icon icon--next" alt="" data-step="4" />
+						<h4>ПОКУПАТЕЛЬ</h4>
+					</div>
+					<div class="order-form-body order-form-body--edit">
+						<div class="form-row">
+							<label>Имя, Фамилия *</label>
+							<input type="text" name="name" />
+						</div>
+						<div class="form-row">
+							<label>Телефон *</label>
+							<input type="text" name="phone" />
+						</div>
+						<div class="form-row">
+							<label>E-mail *</label>
+							<input type="email" name="email" />
+						</div>
+						<div class="form-row">
+							<label>Комментарии к заказу</label>
+							<textarea name="comment"></textarea>
+						</div>
+					</div>
+					<div class="order-form-body order-form-body--done">
+						<span id="form-user-value"></span>
+						<a href="#" class="order-form-change" data-step="4">Изменить</a>
+					
+						<button class="btn" id="btn-order-done">ОФОРМИТЬ ЗАКАЗ</button>
+					</div>
+				</div>			
+			</div>
+			<div class="modal-order-done hide" id="modal-order-done">
+				<div><a href="/" class="logo"><img src="../../public/images/logo.svg" width="145" alt="LOGOTYPE" /></a></div>
+				<div><img src="../../public/icons/close_bur.svg" height="30" width="30" class="icon icon--close" alt="" /></div>
+				<h4>ВАШ ЗАКАЗ ОФОРМЛЕН</h4>
+				<p>dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.</p>
+				<button type="button" class="btn" id="btn-order-done-close">ВЕРНУТЬСЯ К ПОКУПКАМ</button>
 			</div>
 		</div>
 	</div>

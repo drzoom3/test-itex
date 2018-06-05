@@ -75,7 +75,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="order-form hide">
+			<form class="order-form hide" method="POST" action="/">
 				<div class="order-step order-step--1 active">
 					<div class="order-form-header">
 						<img src="../../public/icons/next.svg" height="30" width="30" class="icon icon--next" alt="" data-step="1" />
@@ -155,12 +155,12 @@
 					</div>
 					<div class="order-form-body order-form-body--done">
 						<span id="form-user-value"></span>
-						<a href="#" class="order-form-change" data-step="4">Изменить</a>
+						<div><a href="#" class="order-form-change" data-step="4">Изменить</a></div>
 					
 						<button class="btn" id="btn-order-done">ОФОРМИТЬ ЗАКАЗ</button>
 					</div>
-				</div>			
-			</div>
+				</div>
+			</form>
 			<div class="modal-order-done hide" id="modal-order-done">
 				<div><a href="/" class="logo"><img src="../../public/images/logo.svg" width="145" alt="LOGOTYPE" /></a></div>
 				<div><img src="../../public/icons/close_bur.svg" height="30" width="30" class="icon icon--close" alt="" /></div>

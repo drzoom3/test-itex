@@ -27,6 +27,7 @@ body {
     min-height: 100%;
     justify-content: flex-start;    
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    min-width: 315px;
 
     &.modal-open {
         overflow: hidden;
@@ -211,4 +212,12 @@ p {
     transition-timing-function: ease;
     transition-duration: .35s;
     transition-property: height,visibility
+}
+
+@media (max-width: 1199px) {
+    .page {
+        .page-inner {
+            margin: 0;
+        }
+    }
 }

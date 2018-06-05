@@ -32,7 +32,7 @@
     }
 
     &-subscribe {
-        flex: 0 0 290px;
+        flex: 0 1 290px;
         margin: 0 60px;
  
         h3 {
@@ -94,9 +94,44 @@
     &-social {
         margin-bottom: 30px;
         font-size: 0;
+        white-space: nowrap;
 
         a+a {
             margin-left: 20px;
         }
+    }
+}
+
+@media (max-width: 991px) {
+    .footer-inner {
+        flex-wrap: wrap;
+
+        .footer-subscribe {
+            margin-left: 0;
+        }
+    }
+}
+@media (max-width: 560px) {
+    .footer-nav {
+        flex-wrap: wrap;
+
+        .footer-list+.footer-list {
+            margin: 0;
+        }
+    }    
+
+    .footer-subscribe {
+        flex-grow: 1;
+        width: 100%;
+        margin: 20px 0;
+    }
+    .footer-other {
+        flex-grow: 1;
+        flex-direction: row;
+        margin: 20px 0 0;
+        flex-basis: 100%;
+    }    
+    .footer-social {
+        margin: 0;
     }
 }

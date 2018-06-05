@@ -128,11 +128,16 @@
             &-nav {
                 margin-left: 30px;
                 width: 122px;
+                height: 540px;
+                overflow: hidden;
     
                 .slick-slide {
                     outline: none;
                     margin-bottom: 15px;
+                    overflow: hidden;
                     cursor: pointer;
+                    width: 120px;
+                    height: 150px;
                     
                     &.slick-current {
                         border-color: #C1C1C1; 
@@ -301,6 +306,82 @@
             }
             .order-form-body--done {
                 display: none;
+            }
+        }
+    }
+}
+
+@media (max-width: 991px) {
+    .page--product {
+        .product-gallery-main {
+            width: 282px;
+            height: 390px;
+            overflow: hidden;
+        }
+        .product-gallery-nav {
+            width: 82px;
+    
+            .slick-slide {
+                height: 100px;
+                width: 80px;
+            }
+        }
+        .product-form-size {
+            width: 60px;
+        }
+    }
+}
+
+@media (max-width: 740px) {
+    .page--product {
+        .product {
+            flex-direction: column;
+            align-items: center;
+        }
+        .product-info {
+            margin: 30px 0 0;
+        }
+        .product-gallery-main {
+            width: 390px;
+            height: 540px;
+            overflow: hidden;
+        }
+        .product-gallery-nav {
+            width: 122px;
+            height: 390px;
+    
+            .slick-slide {
+                height: 150px;
+                width: 120px;
+            }
+        }
+        .product-form-size {
+            width: 60px;
+        }
+        .order-form {
+            flex-direction: column;
+            
+            .order-step+.order-step {
+                margin: 20px 0;
+            }
+        }
+    }
+}
+
+@media (max-width: 560px) {
+    .page--product {
+        .product-gallery-main {
+            width: 180px;
+            height: 270px;
+            overflow: hidden;
+        }
+        .product-gallery-nav {
+            width: 58px;
+            height: 270px;
+    
+            .slick-slide {
+                height: 70px;
+                width: 56px;
             }
         }
     }
